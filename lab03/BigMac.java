@@ -15,16 +15,16 @@ public class BigMac { //main class
         myScanner=new Scanner(System.in); //scanner constructor
         
         System.out.print(
-            "Enter the number of Big Macs (an integer >0) :"); //prompt user for input
+            "Enter the number of Big Macs (an integer >0) :"); //prompt user for input of number of burgers
         int nBigMacs=myScanner.nextInt(); //takes user input
-        System.out.print("Enter the cost per Big Mac as"+" a double (in the form xx.xx): ");//takes user input of cost
-        double bigMac$ = myScanner.nextDouble();
+        System.out.print("Enter the cost per Big Mac as"+" a double (in the form xx.xx): ");//prompt user input of cost
+        double bigMac$ = myScanner.nextDouble(); //takes user input
         System.out.print(
-            "Enter the percent tax as a whole number (xx): "); //takes user input of tax rate
+            "Enter the percent tax as a whole number (xx): "); //prompts user input of tax rate
         double taxRate = myScanner.nextDouble();
         taxRate/= 100; //user enters percent and i convert to proportion
         
-        double cost$;
+        double cost$; 
         int dollars, //whole dollar amount of cost
               dimes, pennies; //for storing digits to the right of the decimal point
         cost$ = nBigMacs*bigMac$*(1+taxRate);
