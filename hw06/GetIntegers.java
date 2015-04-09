@@ -9,7 +9,7 @@ public class GetIntegers{
     public static void main(String[] args){
         Scanner myScanner;
         myScanner = new Scanner(System.in);
-        System.out.println("Please enter 5 non-negative integers");
+        System.out.println("Please entezzr 5 non-negative integers");
         int int1 =0, int2=0, int3=0, int4=0, int5=0;
         String a;
         boolean validInput = false;
