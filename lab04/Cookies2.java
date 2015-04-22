@@ -11,59 +11,64 @@ public class Cookies2{
     public static void main(String[] args) {
         Scanner myScanner;
         myScanner= new Scanner(System.in);
-        int divideEvenly;
-
-    System.out.print(
-        "Enter the number of people: ");
-                if (myScanner.hasNextInt()){
-
-    int People=myScanner.nextInt();
-    if(People<1){
-        System.out.println("You did not enter an integer > 1 ");
-        return;
-    }
+        int people;
+        int cookies;
+        int cookiesperperson;
+        int cookiesneeded;
+        int howmanymore;
+        int divideevenly;
         
-    else{
-        System.out.print(
-            "Enter how many cookies you are planning to buy: ");
-        int numberCookies=myScanner.nextInt();
-        if(numberCookies<1)
-            System.out.println("You did not enter an integer > 1");
-            return;
-        else{
-            if(myScanner.hasNextInt())
-            System.out.print(
-                "How many do you want each person to get? ");
-            int cookiesPerPerson=myScanner.nextInt();
+        System.out.println("Enter the number of people: ");
             if(myScanner.hasNextInt()){
-                 divideEvenly= numberCookies%People;
-                if(divideEvenly=0){
-                    System.out.print(
-                    "You have enough cookies for each person and the amount will divide evenly.");
+                people = myScanner.nextInt();
+                if(people >= 1){
+                    System.out.println("Enter the number of cookies you want to buy");
+                    if(myScanner.hasNextInt()){
+                        cookies = myScanner.nextInt();
+                        if(cookies >= 1){
+                            System.out.println("How many cookies do want each person to get?");
+                            if(myScanner.hasNextInt()){
+                                cookiesperperson = myScanner.nextInt();
+                                cookiesneeded= cookiesperperson * people;
+                                if(cookies>=cookiesneeded){
+                                    divideevenly = cookies%people;
+                                    if(divideevenly==0){
+                                        System.out.println("You have enough and they will divide evenly.");
+                                    }
+                                        else{
+                                        System.out.println("You have enough cookies for each person but they will not divide evenly.");
+                                    }
+                                    
+                                    
+                                else{
+                                    howmanymore = cookiesneeded - cookies;
+                                    System.out.println("You will not have enough cookies. You need to buy at least"+ howmanymore+ "cookies.");
+                                }
+                            }
+                            else{
+                                System.out.println("You did not enter an integer");
+                                return;
+                            }
+                        }
+                        else{
+                            System.out.println("You did not enter an integer greater than or equal to 1");
+                            return;
+                        }
+                    }
+                    else{
+                        System.out.println("You did not enter an integer");
+                        return;
+                    }
+                }
+                else{
+                    System.out.println("You did not enter an integer greater than or equal to 1");
+                    return;
                 }
             }
-               
-                else{
-                    if(divideEvenly!=0){
-                        System.out.print("It will not divide evenly.");
-                    }
-                    
-                 }
             else{
                 System.out.println("You did not enter an integer");
                 return;
             }
-        else{
-            System.out.println("You did not enter an integer");
-            return;
-        }    
-    else{
-        System.out.pr("You did not enter an integer");
-        return;
-    }    
-        }
-        
-    }
-    
-    }
+            }   
+}
 }
