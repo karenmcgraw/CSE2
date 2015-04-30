@@ -4,14 +4,18 @@
 /*generate a specific # of :) characters*/
 import java.lang.Math;
 
-public class SmileGenerator{
-    public static void main(String[] args){
+public class SmileGenerator {
+    public static void main (String[] args){
         String smile = ":)";
-        
-    int numberSmiles = (int)(Math.random * 100);
-    int a = 0;
-    int i = 0;
-    
-    for(i = 0; i < 30; )
+        int a = 1;
+        String space = "";
+
+
+int x = (int) (Math.random()*99+1); 
+
+for(a=0;a<x;a++){
+    space = space + smile;
+    System.out.println(space);
+}
     }
 }
